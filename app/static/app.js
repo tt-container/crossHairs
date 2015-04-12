@@ -25,12 +25,14 @@
 			mainPath.lineTo(startPoint.add([200, -50]));
 		};
 
-		scaleLine = function (scaleFactor) {
-			mainPath.scale(scaleFactor);
+		moveLine = function (xCor) {
+			mainPath.position = new paper.Point(xCor, 100);
 		};
 
 		sliderUpdated = function (event, ui) {
-			scaleLine(ui.value);
+			$.get('/slider-test/' + ui.value, {}, function (response) {
+				moveLine(Number(response));
+			});
 		};
 		
 		init = function () {
