@@ -1,0 +1,22 @@
+{
+  "name": "crosshairs",
+  "version": "0.0.1",
+  "homepage": "https://github.com/tt-container/crossHairs",
+  "authors": [
+    "Ed Seykota <tt_95@yahoo.com>"
+  ],
+  "description": "Crosshair test project.",
+  "main": "app.js",
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "paper": "~0.9.22",
+    "jquery-ui": "~1.11.4"
+  }
+}
