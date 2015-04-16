@@ -10,7 +10,7 @@
 			scaleLine,
 			sliderUpdated,
 			requestNewPosition,
-			operationMode = 'server', // Change this to "server" when Node Server is running.
+			operationMode = 'static', // Change this to "server" when Node Server is running = or 'static'
 			init;
 
 		setupCanvas = function () {
@@ -23,19 +23,24 @@
 			mainPath = new paper.Path();
 			mainPath.strokeColor = 'black';
 
-			startPoint = new paper.Point(100, 100);
+			startPoint = new paper.Point(20, 20);
 
 			mainPath.moveTo(startPoint);
-			mainPath.lineTo(startPoint.add([200, -100]));
+
+			//mainPath.strokeColor = 'blue';
+			mainPath.lineTo(startPoint + [20, -20]);
 		};
 
 		moveLine = function (xCor) {
-			mainPath.position = new paper.Point(xCor, 100);
+			
+			mainPath.position = new paper.Point(xCor, 10);
+			mainPath.moveTo(mainPath.position);
+			mainPath.lineTo(mainPath.position + [20, -50]); // new - EAS
 		};
 
 		requestNewPosition = function (value) {
 			if (operationMode == 'static') {
-				moveLine(value * 100);
+				moveLine(value * 200);
 			} else if (operationMode == 'server') {	
 				$.get('/slider-test/' + value, {}, function (response) {
 					moveLine(Number(response));
@@ -55,8 +60,8 @@
 
 			$('#my-slider').slider({
 				min: .05,
-				max: .90,
-				step: .01,
+				max: .95,
+				step: .05,
 				slide: sliderUpdated
 			});
 		};
