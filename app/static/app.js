@@ -29,6 +29,8 @@
 
 			//mainPath.strokeColor = 'blue';
 			mainPath.lineTo(startPoint + [20, -20]);
+
+			
 		};
 
 		moveLine = function (xCor) {
@@ -40,6 +42,7 @@
 
 		requestNewPosition = function (value) {
 			if (operationMode == 'static') {
+				
 				moveLine(value * 200);
 			} else if (operationMode == 'server') {	
 				$.get('/slider-test/' + value, {}, function (response) {

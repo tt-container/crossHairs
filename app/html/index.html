@@ -17,10 +17,13 @@
 	<script type="text/javascript" src="http://code.jquery.com/jquery-1.11.2.min.js"></script>
 	<script type="text/javascript" src="http://code.jquery.com/ui/1.11.4/jquery-ui.min.js"></script>
 	<script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/paper.js/0.9.22/paper-full.min.js"></script>
+	
 
-	<!-- FOR SERVER OPERATION -->
+
+	<!-- FOR SERVER OPERATION 
 	<link rel="stylesheet" href="styles.css"></link>
 	<script type="text/javascript" src="app.js"></script>
+	-->
 
 	<!-- FOR STATIC OPERATION -->
 	<link rel="stylesheet" href="../static/styles.css"></link>
@@ -28,7 +31,13 @@
 </head>
 
 <body>
+<p id="demo"></p>
 	<h1>my Canvas:</h1>
+
+	
+	<script>
+				document.getElementByID("demo").innerHTML = "test";
+				</script>
 
 	<canvas id="my-first-canvas"></canvas>
 
